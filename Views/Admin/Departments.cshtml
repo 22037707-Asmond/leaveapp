@@ -1,0 +1,26 @@
+﻿@model List<Departments>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-@TempData["MsgType"]">
+        @TempData["Message"]
+    </div>
+}
+
+<table class="table table-condensed table-hover" style="text-align: center;">
+    <tr>
+        <th>ID</th>
+        <th>Department Name</th>
+        <th>Description</th>
+        <th>Head of Department</th>
+    </tr>
+    @foreach (Departments dept in Model)
+    {
+        <tr>
+            <td>@dept.id</td>
+            <td>@dept.dept_name</td>
+            <td style="text-align: left;">@dept.dept_description</td>
+            <td>@dept.dept_hod_name</td> <!-- Display the name instead of the ID -->
+        </tr>
+    }
+</table>

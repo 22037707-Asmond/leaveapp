@@ -1,0 +1,48 @@
+﻿@using System.Web
+@model List<Employee>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-@TempData["MsgType"]">
+        @TempData["Message"]
+    </div>
+}
+
+<table class="table table-condensed table-bordered table-hover" style="text-align: center; width: 100%;"> 
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>NRIC</th>
+        <th>Mobile No.</th>
+        <th>Position</th>
+        <th>Manager Name</th>
+        <th>Department</th>
+        <th>Employment Status</th>
+        <th>Edit Action</th>
+    </tr>
+    @foreach (Employee user in Model)
+    {
+        <tr>
+            <td>@user.id</td>
+            <td>@user.name</td>
+            <td>@user.username</td>
+            <td>@String.Format("{0:dd MMM yyyy}", user.start_date)</td>
+            <td>@(user.end_date.HasValue ? user.end_date.Value.ToString("dd MMM yyyy") : "N/A")</td>
+            <td>@user.nric</td>
+            <td>@user.mobile</td>
+            <td>@user.PositionName</td>
+            <td>@(string.IsNullOrEmpty(user.manager_name) ? "N/A" : user.manager_name)</td>
+            <td>@user.DepartmentName</td>
+            <td>@user.EmploymentStatus</td>
+            <td><a asp-controller="Admin"
+                   asp-action="EditUser"
+                   asp-route-emailid="@Common.ReplaceDotsWithDesh(HttpUtility.UrlEncode(user.username))">
+                    <i class="fas fa-edit"></i>
+                </a>
+            </td>
+        </tr>
+    }
+</table>

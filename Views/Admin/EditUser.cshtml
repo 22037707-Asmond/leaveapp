@@ -1,0 +1,285 @@
+﻿@model Employee
+
+<div class="container">
+
+    <div class="my-3">
+        <h2><b>Edit Employee</b></h2>
+    </div>
+
+    <form method="post"
+          asp-controller="Admin"
+          asp-action="EditUser">
+        <input type="text" name="ID" value="@Model.id" hidden />
+
+        <div class="col-md-5 mb-3 form-floating">
+            <input asp-for="name" class="form-control" placeholder="Full Name" />
+            <label asp-for="name">Full Name</label>
+        </div>
+
+        <div class="col-md-5 mb-3 form-floating">
+            <input asp-for="username" class="form-control" id="usernameField" placeholder="Username" />
+            <label asp-for="username">Username (Input FirstName.Lastname)</label>
+        </div>
+
+        <div class="col-md-5 mb-3 form-floating position-relative">
+            <input asp-for="password" class="form-control" id="passwordField" placeholder="Password" style="padding-right: 2.5rem;" />
+            <label asp-for="password">Password</label>
+        </div>
+
+        <div class="col-md-5 mb-3 form-floating">
+            <input asp-for="start_date" class="form-control" type="date" placeholder="Start Date" />
+            <label asp-for="start_date">Start Date</label>
+        </div>
+
+        <div class="col-md-5 mb-3 form-floating">
+            <input asp-for="nric" class="form-control" placeholder="NRIC" />
+            <label asp-for="nric">NRIC/FIN Number</label>
+        </div>
+
+        <div class="col-md-5 mb-3 form-floating">
+            <input asp-for="mobile" class="form-control" type="tel" placeholder="Mobile Number" />
+            <label asp-for="mobile">Mobile Number</label>
+        </div>
+
+        <div class="col-md-5 mb-3 form-floating">
+            <b>Position:</b>
+            <table class="table" style="border-collapse: collapse; width: 100%; border: 1px solid #DDD;">
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" asp-for="position" value="0" id="roleAdmin" />
+                            </div>
+                        </td>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <label class="form-check-label" for="roleAdmin">Admin</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" asp-for="position" value="1" id="roleDirector" />
+                            </div>
+                        </td>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <label class="form-check-label" for="roleDirector">Director</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" asp-for="position" value="2" id="roleManager" />
+                            </div>
+                        </td>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <label class="form-check-label" for="roleManager">Manager</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" asp-for="position" value="3" id="roleSupervisor" />
+                            </div>
+                        </td>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <label class="form-check-label" for="roleSupervisor">Supervisor</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" asp-for="position" value="4" id="roleEmployee" />
+                            </div>
+                        </td>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <label class="form-check-label" for="roleEmployee">Regular Employee</label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- To make the Dynamic table -->
+        <div class="col-md-5 mb-3" id="directorsTable" style="display: none;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Director ID</th>
+                        <th>Director Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (ViewBag.Directors != null)
+                    {
+                        @foreach (var director in ViewBag.Directors)
+                        {
+                            <tr>
+                                <td>@director.id</td>
+                                <td>@director.name</td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr><td colspan="2">No data available</td></tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-5 mb-3" id="managersTable" style="display: none;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Manager ID</th>
+                        <th>Manager Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (ViewBag.Managers != null)
+                    {
+                        @foreach (var manager in ViewBag.Managers)
+                        {
+                            <tr>
+                                <td>@manager.id</td>
+                                <td>@manager.name</td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr><td colspan="2">No data available</td></tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-5 mb-3" id="supervisorsTable" style="display: none;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Supervisor ID</th>
+                        <th>Supervisor Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (ViewBag.Supervisors != null)
+                    {
+                        @foreach (var supervisor in ViewBag.Supervisors)
+                        {
+                            <tr>
+                                <td>@supervisor.id</td>
+                                <td>@supervisor.name</td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr><td colspan="2">No data available</td></tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Will only show when needed, so if the position is manager/supervisor/regular employee -->
+        <div class="col-md-5 mb-3 form-floating" id="managerIdDiv" style="display: none;">
+            <input asp-for="manager_id" class="form-control" placeholder="Manager ID" />
+            <label asp-for="manager_id">Reporting Officer ID</label>
+        </div>
+
+        <!-- Department selection section -->
+        <div class="col-md-5 mb-3 form-floating">
+            <b>Department:</b>
+            <table class="table" style="border-collapse: collapse; width: 100%; border: 1px solid #DDD;">
+                <tbody>
+                    <tr class="dept-option" data-allowed-positions="2,3,4">
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" asp-for="department_id" value="2" id="deptFinance" />
+                            </div>
+                        </td>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <label class="form-check-label" for="deptFinance">Finance Department</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="dept-option" data-allowed-positions="2,3,4">
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" asp-for="department_id" value="3" id="deptHR" />
+                            </div>
+                        </td>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <label class="form-check-label" for="deptHR">HR Department</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="dept-option" data-allowed-positions="2,3,4">
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" asp-for="department_id" value="4" id="deptIT" />
+                            </div>
+                        </td>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <label class="form-check-label" for="deptIT">IT Department</label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-5 mb-3 form-floating">
+            <input asp-for="EmploymentStatus" class="form-control" placeholder="Employment Status" />
+            <label asp-for="EmploymentStatus">Employment Status</label>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const positionRadios = document.querySelectorAll('input[name="position"]');
+            const managerIdDiv = document.getElementById('managerIdDiv');
+            const directorsTable = document.getElementById('directorsTable');
+            const managersTable = document.getElementById('managersTable');
+            const supervisorsTable = document.getElementById('supervisorsTable');
+            const deptOptions = document.querySelectorAll('.dept-option');
+
+            positionRadios.forEach(radio => {
+                radio.addEventListener('change', function () {
+                    const selectedPosition = this.value;
+                    managerIdDiv.style.display = (selectedPosition == '2' || selectedPosition == '3') ? 'block' : 'none';
+
+                    // Adjust visibility of dynamic tables
+                    directorsTable.style.display = (selectedPosition == '1') ? 'block' : 'none';
+                    managersTable.style.display = (selectedPosition == '2') ? 'block' : 'none';
+                    supervisorsTable.style.display = (selectedPosition == '3') ? 'block' : 'none';
+
+                    // Adjust department options based on selected position
+                    deptOptions.forEach(option => {
+                        const allowedPositions = option.getAttribute('data-allowed-positions').split(',');
+                        option.style.display = allowedPositions.includes(selectedPosition) ? '' : 'none';
+                    });
+                });
+            });
+        });
+    </script>
+}

@@ -1,0 +1,406 @@
+﻿@model Employee;
+
+<div class="container">
+
+    <div class="my-3">
+        <h2><b>Create Employee</b></h2>
+    </div>
+
+    <form method="post"
+          asp-controller="Admin"
+          asp-action="CreateUser">
+
+        <div class="col-md-5 mb-3 form-floating">
+            <input asp-for="name" class="form-control"
+                   placeholder="FullName" />
+            <label asp-for="name">Full Name</label>
+        </div>
+
+        <div class="col-md-5 mb-3 form-floating">
+            <input asp-for="username" class="form-control" id="username" placeholder="Username" />
+            <label asp-for="username">Username (Input FirstName.Lastname)</label>
+        </div>
+
+        <!--Script to auto add domain name-->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var usernameInput = document.getElementById('username');
+
+                // Define the domain part as a JavaScript variable
+                var domain = '@Html.Raw("@abc.com")';
+
+                usernameInput.addEventListener('blur', function () {
+                    var value = usernameInput.value.trim();
+                    if (value && !value.endsWith(domain)) {
+                        usernameInput.value = value + domain;
+                    }
+                });
+            });
+        </script>
+
+        <!-- Password Field with Toggle Visibility -->
+        <div class="col-md-5 mb-3 form-floating position-relative">
+            <input asp-for="password" class="form-control" id="passwordField" type="password" placeholder="Password" style="padding-right: 2.5rem;" />
+            <label asp-for="password">Password *</label>
+            <i class="fa fa-eye" onclick="togglePassword('passwordField', this)" style="position: absolute; right: 0.5rem; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+        </div>
+
+        <!-- Confirm Password Field with Toggle Visibility -->
+        <div class="col-md-5 mb-3 form-floating position-relative">
+            <input asp-for="confirm_password" class="form-control" id="passwordField2" type="password" placeholder="Confirm Password" style="padding-right: 2.5rem;" />
+            <label asp-for="confirm_password">Confirm Password *</label>
+            <i class="fa fa-eye" onclick="togglePassword('passwordField2', this)" style="position: absolute; right: 0.5rem; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+        </div>
+
+        <!-- JavaScript to Toggle Password Visibility -->
+        <script>
+            function togglePassword(fieldId, iconElement) {
+                const passwordField = document.getElementById(fieldId);
+                if (passwordField.type === 'password') {
+                    passwordField.type = 'text';
+                    iconElement.classList.remove('fa-eye');
+                    iconElement.classList.add('fa-eye-slash');
+                } else {
+                    passwordField.type = 'password';
+                    iconElement.classList.remove('fa-eye-slash');
+                    iconElement.classList.add('fa-eye');
+                }
+            }
+        </script>
+
+        <div class="col-md-5 mb-3 form-floating">
+            <input asp-for="start_date" class="form-control"
+                   type="date" placeholder="Start Date" />
+            <label asp-for="start_date">Start Date</label>
+        </div>
+
+        <div class="col-md-5 mb-3 form-floating">
+            <input asp-for="nric" class="form-control"
+                   placeholder="NRIC" />
+            <label asp-for="nric">NRIC/FIN Number</label>
+        </div>
+
+        <div class="col-md-5 mb-3 form-floating">
+            <input asp-for="mobile" class="form-control"
+                   type="tel" placeholder="Mobile Number" />
+            <label asp-for="mobile">Mobile Number</label>
+        </div>
+
+        <div class="col-md-5 mb-3 form-floating">
+            <b>Position:</b>
+            <table class="table" style="border-collapse: collapse; width: 100%; border: 1px solid #DDD;">
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" asp-for="position" value="0" id="roleAdmin" />
+                            </div>
+                        </td>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <label class="form-check-label" for="roleAdmin">Admin</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" asp-for="position" value="1" id="roleDirector" />
+                            </div>
+                        </td>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <label class="form-check-label" for="roleDirector">Director</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" asp-for="position" value="2" id="roleManager" />
+                            </div>
+                        </td>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <label class="form-check-label" for="roleManager">Manager</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" asp-for="position" value="3" id="roleSupervisor" />
+                            </div>
+                        </td>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <label class="form-check-label" for="roleSupervisor">Supervisor</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" asp-for="position" value="4" id="roleEmployee" />
+                            </div>
+                        </td>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <label class="form-check-label" for="roleEmployee">Regular Employee</label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- To make the Dynamic table -->
+        <div class="col-md-5 mb-3" id="directorsTable" style="display: none;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Director ID</th>
+                        <th>Director Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (ViewBag.Directors != null)
+                    {
+                        @foreach (var director in ViewBag.Directors)
+                        {
+                            <tr>
+                                <td>@director.id</td>
+                                <td>@director.name</td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr><td colspan="2">No data available</td></tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-5 mb-3" id="managersTable" style="display: none;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Manager ID</th>
+                        <th>Manager Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (ViewBag.Managers != null)
+                    {
+                        @foreach (var manager in ViewBag.Managers)
+                        {
+                            <tr>
+                                <td>@manager.id</td>
+                                <td>@manager.name</td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr><td colspan="2">No data available</td></tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-5 mb-3" id="supervisorsTable" style="display: none;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Supervisor ID</th>
+                        <th>Supervisor Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (ViewBag.Supervisors != null)
+                    {
+                        @foreach (var supervisor in ViewBag.Supervisors)
+                        {
+                            <tr>
+                                <td>@supervisor.id</td>
+                                <td>@supervisor.name</td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr><td colspan="2">No data available</td></tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Will only show when needed, so if the position is manager/supervisor/regular employee -->
+        <div class="col-md-5 mb-3 form-floating" id="managerIdDiv" style="display: none;">
+            <input asp-for="manager_id" class="form-control" placeholder="Manager ID" />
+            <label asp-for="manager_id">Reporting Officer ID</label>
+        </div>
+
+        <!-- Department selection section -->
+        <div class="col-md-5 mb-3 form-floating">
+            <b>Department:</b>
+            <table class="table" style="border-collapse: collapse; width: 100%; border: 1px solid #DDD;">
+                <tbody>
+                    <tr class="dept-option" data-allowed-positions="2,3,4">
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" asp-for="department_id" value="2" id="deptFinance" />
+                            </div>
+                        </td>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <label class="form-check-label" for="deptFinance">Finance Department</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="dept-option" data-allowed-positions="2,3,4">
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" asp-for="department_id" value="3" id="deptHR" />
+                            </div>
+                        </td>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <label class="form-check-label" for="deptHR">HR Department</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="dept-option" data-allowed-positions="2,3,4">
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" asp-for="department_id" value="4" id="deptIT" />
+                            </div>
+                        </td>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <label class="form-check-label" for="deptIT">IT Department</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="dept-option" data-allowed-positions="2,3,4">
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" asp-for="department_id" value="5" id="deptSales" />
+                            </div>
+                        </td>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <label class="form-check-label" for="deptSales">Sales Department</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="dept-option" data-allowed-positions="0,1">
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" asp-for="department_id" value="1" id="deptCorporate" />
+                            </div>
+                        </td>
+                        <td style="border: 1px solid #DDD;">
+                            <div class="form-check">
+                                <label class="form-check-label" for="deptCorporate">Corporate (For Directors or Admin Accounts Only)</label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const positionRadios = document.querySelectorAll('input[name="position"]');
+                const managerIdDiv = document.querySelector('#managerIdDiv');
+                const directorsTable = document.querySelector('#directorsTable');
+                const managersTable = document.querySelector('#managersTable');
+                const supervisorsTable = document.querySelector('#supervisorsTable');
+                const deptOptions = document.querySelectorAll('.dept-option');
+
+                positionRadios.forEach(radio => {
+                    radio.addEventListener('change', function () {
+                        const selectedValue = parseInt(this.value);
+                        managerIdDiv.style.display = (selectedValue === 0 || selectedValue === 1) ? 'none' : 'block';
+                        directorsTable.style.display = (selectedValue === 2) ? 'block' : 'none';
+                        managersTable.style.display = (selectedValue === 3) ? 'block' : 'none';
+                        supervisorsTable.style.display = (selectedValue === 4) ? 'block' : 'none';
+
+                        // Update department options
+                        deptOptions.forEach(option => {
+                            const allowedPositions = option.getAttribute('data-allowed-positions').split(',').map(Number);
+                            if (allowedPositions.includes(selectedValue)) {
+                                option.style.display = 'table-row';
+                            } else {
+                                option.style.display = 'none';
+                            }
+                        });
+
+                        // Automatically check the Corporate option if Admin or Director is selected
+                        if (selectedValue === 0 || selectedValue === 1) {
+                            document.querySelector('#deptCorporate').checked = true;
+                        } else {
+                            document.querySelector('#deptCorporate').checked = false;
+                        }
+                    });
+                });
+
+                // Trigger the change event on page load to set the initial state
+                const checkedRadio = document.querySelector('input[name="position"]:checked');
+                if (checkedRadio) {
+                    checkedRadio.dispatchEvent(new Event('change'));
+                }
+            });
+        </script>
+
+        <div class="form-group row">
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <a asp-action="Users" class="btn btn-secondary">Cancel</a>
+            </div>
+        </div>
+
+        <!-- Error Messages -->
+        @if (ViewData["Errors"] != null && ViewData["Errors"] is List<string> errorList)
+        {
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach (var error in errorList)
+                    {
+                        <li>@error</li>
+                    }
+                </ul>
+            </div>
+        }
+
+        @if (ViewData["Message"] != null)
+        {
+            <div class="form-group row">
+                <div class="col-6">
+                    <div class="alert alert-@ViewData["MsgType"]">
+                        <b>Message: </b>@ViewData["Message"]<br />
+                        @if (ViewData["Message"] != null)
+                        {
+                            <div class="form-group row">
+                                <div class="col-6">
+                                    <div class="alert alert-@ViewData["MsgType"]">
+                                        <b>Message: </b>@ViewData["Message"]
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        @if (!String.IsNullOrEmpty(ViewData["ExecSQL"]?.ToString()))
+                        {
+                            <b>SQL: </b>
+                            @ViewData["ExecSQL"]?.ToString()
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+
+    </form>
+
+</div>

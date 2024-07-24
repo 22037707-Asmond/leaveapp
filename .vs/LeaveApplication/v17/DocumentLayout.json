@@ -1,0 +1,174 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\RP\\LeaveApplication\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1AA5F2-9252-4007-8FBA-561C6A098889}|LeaveApplication.csproj|c:\\rp\\leaveapplication\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7A1AA5F2-9252-4007-8FBA-561C6A098889}|LeaveApplication.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1AA5F2-9252-4007-8FBA-561C6A098889}|LeaveApplication.csproj|c:\\rp\\leaveapplication\\views\\admin\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7A1AA5F2-9252-4007-8FBA-561C6A098889}|LeaveApplication.csproj|solutionrelative:views\\admin\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1AA5F2-9252-4007-8FBA-561C6A098889}|LeaveApplication.csproj|c:\\rp\\leaveapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1AA5F2-9252-4007-8FBA-561C6A098889}|LeaveApplication.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1AA5F2-9252-4007-8FBA-561C6A098889}|LeaveApplication.csproj|c:\\rp\\leaveapplication\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1AA5F2-9252-4007-8FBA-561C6A098889}|LeaveApplication.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1AA5F2-9252-4007-8FBA-561C6A098889}|LeaveApplication.csproj|c:\\rp\\leaveapplication\\views\\admin\\departments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7A1AA5F2-9252-4007-8FBA-561C6A098889}|LeaveApplication.csproj|solutionrelative:views\\admin\\departments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1AA5F2-9252-4007-8FBA-561C6A098889}|LeaveApplication.csproj|c:\\rp\\leaveapplication\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7A1AA5F2-9252-4007-8FBA-561C6A098889}|LeaveApplication.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1AA5F2-9252-4007-8FBA-561C6A098889}|LeaveApplication.csproj|c:\\rp\\leaveapplication\\models\\employees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1AA5F2-9252-4007-8FBA-561C6A098889}|LeaveApplication.csproj|solutionrelative:models\\employees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1AA5F2-9252-4007-8FBA-561C6A098889}|LeaveApplication.csproj|c:\\rp\\leaveapplication\\views\\admin\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7A1AA5F2-9252-4007-8FBA-561C6A098889}|LeaveApplication.csproj|solutionrelative:views\\admin\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1AA5F2-9252-4007-8FBA-561C6A098889}|LeaveApplication.csproj|c:\\rp\\leaveapplication\\views\\admin\\createuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7A1AA5F2-9252-4007-8FBA-561C6A098889}|LeaveApplication.csproj|solutionrelative:views\\admin\\createuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 229,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Users.cshtml",
+              "DocumentMoniker": "C:\\RP\\LeaveApplication\\Views\\Admin\\Users.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Users.cshtml",
+              "ToolTip": "C:\\RP\\LeaveApplication\\Views\\Admin\\Users.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Users.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACgAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-23T16:10:29.778Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\RP\\LeaveApplication\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\RP\\LeaveApplication\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-24T15:50:48.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EditUser.cshtml",
+              "DocumentMoniker": "C:\\RP\\LeaveApplication\\Views\\Admin\\EditUser.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\EditUser.cshtml",
+              "ToolTip": "C:\\RP\\LeaveApplication\\Views\\Admin\\EditUser.cshtml",
+              "RelativeToolTip": "Views\\Admin\\EditUser.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-23T16:30:28.869Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 229,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\RP\\LeaveApplication\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\RP\\LeaveApplication\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T20:00:02.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Departments.cshtml",
+              "DocumentMoniker": "C:\\RP\\LeaveApplication\\Views\\Admin\\Departments.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Departments.cshtml",
+              "ToolTip": "C:\\RP\\LeaveApplication\\Views\\Admin\\Departments.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Departments.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-23T19:47:35.871Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\RP\\LeaveApplication\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\RP\\LeaveApplication\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-23T19:46:19.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Employees.cs",
+              "DocumentMoniker": "C:\\RP\\LeaveApplication\\Models\\Employees.cs",
+              "RelativeDocumentMoniker": "Models\\Employees.cs",
+              "ToolTip": "C:\\RP\\LeaveApplication\\Models\\Employees.cs",
+              "RelativeToolTip": "Models\\Employees.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAIwC4AAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T19:35:48.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CreateUser.cshtml",
+              "DocumentMoniker": "C:\\RP\\LeaveApplication\\Views\\Admin\\CreateUser.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\CreateUser.cshtml",
+              "ToolTip": "C:\\RP\\LeaveApplication\\Views\\Admin\\CreateUser.cshtml",
+              "RelativeToolTip": "Views\\Admin\\CreateUser.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-23T16:37:25.855Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\RP\\LeaveApplication\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "C:\\RP\\LeaveApplication\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AQIAAE8AAAAAAAAAAAAqwGcAAACtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T07:13:57.402Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
